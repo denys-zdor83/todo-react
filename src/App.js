@@ -3,16 +3,18 @@ import Navbar from './components/Navbar';
 import {BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home';
 import About from './pages/About';
+import Alert from './components/Alert';
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar/>
       <div className="container mt-4">
-          <Switch>
-            <Route path={"/"} exact component={Home} />
-            <Route path={"/about"} component={About} />
-          </Switch>
+        <Alert/>
+        <Switch>
+          <Route path={"/"} exact component={Home} />
+          <Route path={"/about"} component={About} />
+        </Switch>
       </div>
     </BrowserRouter>
   );
