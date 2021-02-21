@@ -5,21 +5,24 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Alert from './components/Alert';
 import AlertState from './components/context/alert/alertState';
+import FirebaseState from './components/context/firebase/firebaseState';
 
 function App() {
   return (
-    <AlertState>
-      <BrowserRouter>
-        <Navbar/>
-        <div className="container mt-4">
-          <Alert/>
-          <Switch>
-            <Route path={"/"} exact component={Home} />
-            <Route path={"/about"} component={About} />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    </AlertState>
+    <FirebaseState>
+      <AlertState>
+        <BrowserRouter>
+          <Navbar/>
+          <div className="container mt-4">
+            <Alert/>
+            <Switch>
+              <Route path={"/"} exact component={Home} />
+              <Route path={"/about"} component={About} />
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </AlertState>
+    </FirebaseState>
   );
 }
 

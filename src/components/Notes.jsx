@@ -1,12 +1,15 @@
 import React from 'react'
+import { firebaseContext } from './context/firebase/firebaseContext';
 
 function Notes() {
+  const { fetchNotes } = React.useContext(firebaseContext)
+
 
   return (
-    <ul class="list-group">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">An item</li>
+    <ul className="list-group">
+      <li className="list-group-item">An item</li>
+      <li className="list-group-item">An item</li>
+      <li className="list-group-item">An item</li>
     </ul>
   );
 }
